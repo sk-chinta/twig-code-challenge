@@ -62,3 +62,38 @@ while (array.length) {
   groupBy -= 1;
 }
 ```
+
+### Installation and Usage
+
+Install the dependencies with 
+```
+npm install
+```
+
+Start the server
+```
+npm start
+```
+
+Send POST request http://localhost:8080/run-cases
+
+Sample request payload
+
+```
+[
+    {
+        "array": [1,2,4,5,5, 4,5,5, 4,5,5],
+        "split": 9
+    },
+    {
+        "array": [1,2,4,5,5, 4,5,5, 4,5,5],
+        "split": 2
+    }
+]
+```
+
+Sample Request Response
+
+```
+{"status":200,"body":[{"testCase":[[1,2],[4,5],[5],[4],[5],[5],[4],[5],[5]]},{"testCase":[[1,2,4,5,5,4],[5,5,4,5,5]]}]}
+```
