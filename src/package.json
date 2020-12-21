@@ -1,0 +1,71 @@
+{
+  "name": "rc-cms-service",
+  "version": "0.1.0",
+  "description": "rc-cms-service",
+  "repository": {},
+  "author": "PC",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --build",
+    "start": "ts-node-dev server.ts",
+    "test": "./node_modules/.bin/jshint .",
+    "test:watch": "npm run test -- --watchAll"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "async": "3.2.0",
+    "koa": "^2.13.0",
+    "koa-body": "^4.2.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^10.0.0",
+    "koa-logger": "^3.2.1",
+    "koa2-cors": "^2.0.6",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.14",
+    "@types/koa": "^2.11.6",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-logger": "^3.1.1",
+    "@types/koa-router": "^7.4.1",
+    "@types/koa2-cors": "^2.0.1",
+    "husky": "^4.3.5",
+    "prettier": "2.1.2",
+    "pretty-quick": "^3.1.0",
+    "ts-node-dev": "^1.1.1"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "modulePathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ],
+    "roots": [
+      "<rootDir>/__tests__"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
